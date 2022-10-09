@@ -32,10 +32,16 @@ public class DemoSecurityConfig {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .formLogin(configurer -> configurer
-                        .loginPage("/Login")
-                        .loginProcessingUrl("/authenticateTheUser")
-                        .permitAll())
+                .formLogin(configurer -> {
+                    try {
+                        configurer
+                                .loginPage("/Login")
+                                .loginProcessingUrl("/authenticateTheUser")
+                                .permitAll().and().logout().permitAll();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                })
                 .build();
     }
 
