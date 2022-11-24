@@ -1,0 +1,11 @@
+com\uc\config\DemoSecurityConfig.class
+com\uc\rest\Exception\CustomerErrorResponse.class
+com\uc\Model\Item.class
+com\uc\config\MySpringMvcDispatcherServletInitializer.class
+com\uc\rest\Exception\CustomerNotFoundException.class
+com\uc\controller\LoginController.class
+com\uc\DAO\ItemDAO.class
+com\uc\config\SecurityWebApplicationInitialzer.class
+com\uc\config\DemoAppConfig.class
+com\uc\DAO\ItemDAOImpl.class
+com\uc\controller\DemoController.class
