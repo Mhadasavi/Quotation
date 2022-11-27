@@ -1,6 +1,7 @@
 package com.uc.rest.controller;
 
 import com.uc.Model.Item;
+import com.uc.rest.Exception.CustomerNotFoundException;
 import com.uc.services.ItemService;
 import com.uc.services.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class ItemController {
     @GetMapping("/Item/{id}")
     public Item getItem(@PathVariable int id){
         Item item= itemService.getItem(id);
+        if(item==null){
+            throw new CustomerNotFoundException("Item Id not found "+id);
+        }
+
         return item;
     }
 }
