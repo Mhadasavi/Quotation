@@ -10,19 +10,19 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class ItemServiceImpl implements ItemService{
+public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemDAO itemDAO;
 
     @Override
     public List<Item> getItems() {
-        return null;
+        return itemDAO.getItems();
     }
 
     @Override
     public void saveItem(Item theItem) {
-
+        itemDAO.addItem(theItem);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
-    public void deleteItem(int theId) {
-
+    public void deleteItem(Item item) {
+    itemDAO.deleteItem(item);
     }
 }
