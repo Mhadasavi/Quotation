@@ -11,5 +11,5 @@ public interface ItemService {
 
     public Item getItem(int theId);
 
-    public void deleteItem(int theId);
+    public void deleteItem(Item theItem);
 }
